@@ -236,84 +236,90 @@ function App() {
         .animate-slideIn { animation: slideIn 0.6s ease-out; }
       `}</style>
 
-      <div className="w-full max-w-5xl relative z-10">
+      <div className="w-full max-w-6xl relative z-10">
         {/* Header */}
-        <div className="text-center mb-6 md:mb-10 pt-4 animate-slideIn">
-          <div className="flex items-center justify-center gap-2 md:gap-4 mb-4">
-            <div className="p-2 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full shadow-lg">
-              <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-white" />
+        <div className="text-center mb-12 md:mb-16 pt-6 md:pt-8 animate-slideIn">
+          <div className="flex items-center justify-center gap-3 md:gap-6 mb-6">
+            <div className="p-3 md:p-4 bg-gradient-to-br from-purple-500 via-violet-500 to-pink-500 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 group cursor-pointer">
+              <Sparkles className="w-7 h-7 md:w-9 md:h-9 text-white group-hover:scale-110 transition-transform duration-300" />
             </div>
-            <h1 className="text-3xl md:text-5xl font-black bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-7xl font-black bg-gradient-to-r from-purple-600 via-violet-600 to-pink-600 bg-clip-text text-transparent drop-shadow-2xl">
               Poem Studio
             </h1>
-            <div className="p-2 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full shadow-lg">
-              <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-white" />
+            <div className="p-3 md:p-4 bg-gradient-to-br from-pink-500 via-purple-500 to-violet-500 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 group cursor-pointer">
+              <Sparkles className="w-7 h-7 md:w-9 md:h-9 text-white group-hover:scale-110 transition-transform duration-300" />
             </div>
           </div>
-          <p className="text-purple-600 text-xs md:text-base font-semibold">
-            Create, Collect & Cherish Your Poetry
-          </p>
+          <div className="max-w-2xl mx-auto">
+            <p className="text-base md:text-xl font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+              Create, Collect & Cherish Your Poetry
+            </p>
+            <div className="h-1 w-24 mx-auto bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 rounded-full"></div>
+          </div>
         </div>
 
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 md:grid-cols-4 bg-white/70 backdrop-blur-sm border-2 border-purple-200 rounded-xl mb-6 md:mb-8">
-            <TabsTrigger value="generate" className="text-xs md:text-sm rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white">
-              <Sparkles className="w-4 h-4 mr-1" />
+          <TabsList className="grid w-full grid-cols-3 md:grid-cols-4 bg-white/50 backdrop-blur-2xl border border-white/50 rounded-2xl mb-8 md:mb-12 shadow-2xl p-1.5 md:p-2">
+            <TabsTrigger value="generate" className="text-xs md:text-sm font-semibold rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:via-violet-500 data-[state=active]:to-pink-500 data-[state=active]:text-white data-[state=active]:shadow-xl transition-all duration-300 text-purple-700 hover:text-purple-900">
+              <Sparkles className="w-4 h-4 mr-2" />
               <span className="hidden sm:inline">Create</span>
             </TabsTrigger>
-            <TabsTrigger value="library" className="text-xs md:text-sm rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white">
-              <FileText className="w-4 h-4 mr-1" />
+            <TabsTrigger value="library" className="text-xs md:text-sm font-semibold rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:via-violet-500 data-[state=active]:to-pink-500 data-[state=active]:text-white data-[state=active]:shadow-xl transition-all duration-300 text-purple-700 hover:text-purple-900">
+              <FileText className="w-4 h-4 mr-2" />
               <span className="hidden sm:inline">Library</span>
             </TabsTrigger>
-            <TabsTrigger value="favorites" className="text-xs md:text-sm rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white">
-              <Heart className="w-4 h-4 mr-1" />
+            <TabsTrigger value="favorites" className="text-xs md:text-sm font-semibold rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:via-violet-500 data-[state=active]:to-pink-500 data-[state=active]:text-white data-[state=active]:shadow-xl transition-all duration-300 text-purple-700 hover:text-purple-900">
+              <Heart className="w-4 h-4 mr-2" />
               <span className="hidden sm:inline">Favorites</span>
             </TabsTrigger>
-            <TabsTrigger value="tips" className="text-xs md:text-sm rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white hidden md:block">
-              <Share2 className="w-4 h-4 mr-1" />
+            <TabsTrigger value="tips" className="text-xs md:text-sm font-semibold rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:via-violet-500 data-[state=active]:to-pink-500 data-[state=active]:text-white data-[state=active]:shadow-xl transition-all duration-300 text-purple-700 hover:text-purple-900 hidden md:block">
+              <Share2 className="w-4 h-4 mr-2" />
               Tips
             </TabsTrigger>
           </TabsList>
 
           {/* Generate Tab */}
-          <TabsContent value="generate" className="space-y-6 animate-slideIn">
-            <Card className="bg-white/80 backdrop-blur-xl border-purple-200 shadow-2xl hover:shadow-3xl transition-all duration-300 border-2">
-              <form onSubmit={handleGeneratePoem} className="p-6 md:p-10">
-                <div className="mb-8">
-                  <label htmlFor="prompt" className="block text-purple-900 font-bold mb-4 text-base md:text-lg">
+          <TabsContent value="generate" className="space-y-8 animate-slideIn">
+            <Card className="bg-white/60 backdrop-blur-3xl border border-white/60 shadow-3xl hover:shadow-4xl transition-all duration-500 rounded-3xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-100/20 via-transparent to-pink-100/20 pointer-events-none"></div>
+              <form onSubmit={handleGeneratePoem} className="p-8 md:p-12 relative z-10">
+                <div className="mb-10">
+                  <label htmlFor="prompt" className="block text-purple-900 font-bold mb-4 text-lg md:text-xl">
                     What would you like your poem to be about?
                   </label>
                   <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-200/40 to-pink-200/40 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                     <Input
                       id="prompt"
                       value={prompt}
                       onChange={(e) => setPrompt(e.target.value)}
                       placeholder="e.g., moonlight dreams, passionate love, the ocean's whisper..."
-                      className="w-full bg-white border-2 border-purple-200 text-purple-900 placeholder-purple-400 text-base md:text-lg h-14 md:h-16 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-xl transition-all duration-200 font-medium group-hover:border-purple-300"
+                      className="relative w-full bg-white/70 backdrop-blur-xl border border-white/50 text-purple-900 placeholder-purple-400 text-base md:text-lg h-16 md:h-20 focus:ring-2 focus:ring-purple-500 focus:border-transparent rounded-2xl transition-all duration-300 font-medium group-hover:bg-white/80 focus:bg-white/90 shadow-xl"
                       disabled={loading}
                     />
                   </div>
                 </div>
 
                 {/* Tone Selector */}
-                <div className="mb-8">
-                  <label className="block text-purple-900 font-bold mb-4 text-base md:text-lg">
+                <div className="mb-10">
+                  <label className="block text-purple-900 font-bold mb-5 text-base md:text-lg">
                     Poetry Tone
                   </label>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {['romantic', 'melancholic', 'inspirational', 'whimsical'].map(tone => (
                       <button
                         key={tone}
                         type="button"
                         onClick={() => setToneOption(tone)}
-                        className={`p-3 rounded-lg font-semibold transition-all duration-200 ${
+                        className={`group relative p-4 rounded-2xl font-bold text-sm md:text-base transition-all duration-300 overflow-hidden ${
                           toneOption === tone
-                            ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-lg'
-                            : 'bg-purple-100 text-purple-700 hover:bg-purple-200 border-2 border-purple-200'
+                            ? 'bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 text-white shadow-2xl scale-105'
+                            : 'bg-white/50 backdrop-blur-xl text-purple-700 hover:bg-white/70 border border-white/50 hover:border-purple-200 shadow-lg hover:shadow-xl'
                         }`}
                       >
-                        {tone.charAt(0).toUpperCase() + tone.slice(1)}
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <span className="relative">{tone.charAt(0).toUpperCase() + tone.slice(1)}</span>
                       </button>
                     ))}
                   </div>
@@ -321,22 +327,22 @@ function App() {
 
                 {/* Error Message */}
                 {error && (
-                  <div className="mb-8 p-4 bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-300 rounded-lg text-red-700 text-sm md:text-base font-medium animate-pulse">
+                  <div className="mb-8 p-5 bg-gradient-to-br from-red-100/60 to-red-50/60 backdrop-blur-xl border border-red-200/50 rounded-2xl text-red-700 text-sm md:text-base font-semibold animate-pulse shadow-lg">
                     {error}
                   </div>
                 )}
 
                 {/* Buttons */}
-                <div className="flex gap-3 md:gap-4 flex-col sm:flex-row">
+                <div className="flex gap-4 md:gap-5 flex-col sm:flex-row pt-4">
                   <Button
                     type="submit"
                     disabled={loading || !prompt.trim()}
-                    className="flex-1 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold h-12 md:h-14 text-base md:text-lg disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl rounded-xl disabled:from-purple-400 disabled:to-purple-500"
+                    className="flex-1 bg-gradient-to-r from-purple-600 via-violet-600 to-pink-600 hover:from-purple-700 hover:via-violet-700 hover:to-pink-700 text-white font-bold h-14 md:h-16 text-base md:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-2xl hover:shadow-3xl rounded-2xl disabled:from-purple-400 disabled:via-violet-400 disabled:to-pink-400"
                   >
                     {loading ? (
                       <div className="flex items-center gap-3">
                         <Spinner className="w-5 h-5 animate-spin" />
-                        <span>Generating...</span>
+                        <span>Generating your poem...</span>
                       </div>
                     ) : (
                       <div className="flex items-center gap-2">
@@ -350,7 +356,7 @@ function App() {
                     type="button"
                     onClick={handleClear}
                     disabled={loading}
-                    className="bg-gradient-to-r from-purple-100 to-purple-100 border-2 border-purple-300 text-purple-700 hover:from-purple-200 hover:to-purple-200 font-bold h-12 md:h-14 text-base md:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 rounded-xl hover:shadow-md"
+                    className="bg-white/50 backdrop-blur-xl border border-white/50 text-purple-700 hover:bg-white/70 hover:shadow-2xl font-bold h-14 md:h-16 text-base md:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 rounded-2xl shadow-lg"
                   >
                     <div className="flex items-center gap-2">
                       <RefreshCw className="w-5 h-5" />
@@ -363,63 +369,64 @@ function App() {
 
             {/* Poem Display */}
             {poem && (
-              <Card className={`bg-gradient-to-br from-white to-purple-50/50 border-2 border-purple-200 p-6 md:p-10 shadow-2xl transition-all duration-1000 backdrop-blur-sm ${showPoem ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+              <Card className={`bg-white/60 backdrop-blur-3xl border border-white/60 p-8 md:p-12 shadow-3xl transition-all duration-1000 rounded-3xl overflow-hidden ${showPoem ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-100/30 via-transparent to-pink-100/30 pointer-events-none"></div>
+                <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
                   <div>
                     {poem.result.title && (
-                      <h2 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent mb-2">
+                      <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 via-violet-600 to-pink-600 bg-clip-text text-transparent mb-2 drop-shadow-lg">
                         {poem.result.title}
                       </h2>
                     )}
                   </div>
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="outline" className="border-2 border-purple-300 text-purple-700 hover:bg-purple-100 rounded-lg" onClick={() => handleCopyPoem(poem.result.poem, 'current')}>
-                      {copiedId === 'current' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  <div className="flex gap-3">
+                    <Button size="sm" variant="outline" className="bg-white/50 backdrop-blur-xl border border-white/50 text-purple-700 hover:bg-white/70 hover:shadow-xl rounded-xl transition-all duration-300 shadow-lg" onClick={() => handleCopyPoem(poem.result.poem, 'current')}>
+                      {copiedId === 'current' ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
                     </Button>
-                    <Button size="sm" variant="outline" className="border-2 border-purple-300 text-purple-700 hover:bg-purple-100 rounded-lg" onClick={() => handleDownloadPoem(poem.result.title || 'poem', poem.result.poem)}>
-                      <Download className="w-4 h-4" />
+                    <Button size="sm" variant="outline" className="bg-white/50 backdrop-blur-xl border border-white/50 text-purple-700 hover:bg-white/70 hover:shadow-xl rounded-xl transition-all duration-300 shadow-lg" onClick={() => handleDownloadPoem(poem.result.title || 'poem', poem.result.poem)}>
+                      <Download className="w-5 h-5" />
                     </Button>
-                    <Button size="sm" variant="outline" className="border-2 border-purple-300 text-purple-700 hover:bg-purple-100 rounded-lg" onClick={handleSavePoem}>
-                      <Heart className="w-4 h-4" />
+                    <Button size="sm" variant="outline" className="bg-white/50 backdrop-blur-xl border border-white/50 text-purple-700 hover:bg-white/70 hover:shadow-xl rounded-xl transition-all duration-300 shadow-lg" onClick={handleSavePoem}>
+                      <Heart className="w-5 h-5" />
                     </Button>
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 md:p-10 mb-8 md:mb-10 border-2 border-purple-100 shadow-inner">
-                  <p className="text-purple-900 whitespace-pre-wrap font-serif text-lg md:text-2xl leading-relaxed md:leading-loose font-light italic">
+                <div className="relative z-10 bg-white/50 backdrop-blur-2xl rounded-3xl p-8 md:p-12 mb-8 md:mb-10 border border-white/50 shadow-2xl">
+                  <p className="text-purple-900 whitespace-pre-wrap font-serif text-xl md:text-2xl leading-relaxed md:leading-loose font-light italic">
                     {poem.result.poem}
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-4">
                   {poem.result.style && (
-                    <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
-                      <span className="text-purple-700 font-bold text-xs block">Style</span>
+                    <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-4 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300">
+                      <span className="text-purple-700 font-bold text-xs block mb-1">Style</span>
                       <span className="text-purple-900 font-semibold text-sm">{poem.result.style}</span>
                     </div>
                   )}
-                  <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
-                    <span className="text-purple-700 font-bold text-xs block">Stanzas</span>
+                  <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-4 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <span className="text-purple-700 font-bold text-xs block mb-1">Stanzas</span>
                     <span className="text-purple-900 font-semibold text-sm">{poem.result.stanza_count || 'N/A'}</span>
                   </div>
-                  <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
-                    <span className="text-purple-700 font-bold text-xs block">Lines</span>
+                  <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-4 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <span className="text-purple-700 font-bold text-xs block mb-1">Lines</span>
                     <span className="text-purple-900 font-semibold text-sm">{poem.result.line_count || 'N/A'}</span>
                   </div>
                   {poem.metadata?.processing_time && (
-                    <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
-                      <span className="text-purple-700 font-bold text-xs block">Processing</span>
+                    <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-4 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300">
+                      <span className="text-purple-700 font-bold text-xs block mb-1">Processing</span>
                       <span className="text-purple-900 font-semibold text-sm">{poem.metadata.processing_time}</span>
                     </div>
                   )}
                 </div>
 
                 {poem.metadata?.creative_elements && poem.metadata.creative_elements.length > 0 && (
-                  <div className="mt-6">
-                    <span className="text-purple-700 font-bold text-sm block mb-3">Creative Elements:</span>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="relative z-10 mt-8">
+                    <span className="text-purple-700 font-bold text-sm block mb-4">Creative Elements:</span>
+                    <div className="flex flex-wrap gap-3">
                       {poem.metadata.creative_elements.map((element, idx) => (
-                        <span key={idx} className="inline-block bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
+                        <span key={idx} className="inline-block bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300">
                           {element}
                         </span>
                       ))}
@@ -430,8 +437,8 @@ function App() {
             )}
 
             {!poem && !loading && (
-              <div className="text-center py-8 md:py-12">
-                <p className="text-purple-600 text-base md:text-xl font-semibold">
+              <div className="text-center py-12 md:py-16">
+                <p className="text-purple-600 text-lg md:text-2xl font-semibold">
                   Let your creativity flow. Enter a topic to begin your poetic journey.
                 </p>
               </div>
@@ -441,40 +448,44 @@ function App() {
           {/* Library Tab */}
           <TabsContent value="library" className="animate-slideIn">
             {allSavedPoems.length === 0 ? (
-              <Card className="bg-white/80 backdrop-blur-xl border-purple-200 shadow-2xl border-2 p-8 md:p-12 text-center">
-                <FileText className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-                <p className="text-purple-700 text-lg font-semibold">No poems yet</p>
-                <p className="text-purple-500">Generate and save your first poem to build your library</p>
+              <Card className="bg-white/60 backdrop-blur-3xl border border-white/50 shadow-3xl p-12 md:p-16 text-center rounded-3xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-100/30 to-pink-100/30 pointer-events-none"></div>
+                <div className="relative z-10">
+                  <FileText className="w-16 h-16 text-purple-400 mx-auto mb-6" />
+                  <p className="text-purple-700 text-lg md:text-xl font-bold mb-2">No poems yet</p>
+                  <p className="text-purple-500 text-base">Generate and save your first poem to build your library</p>
+                </div>
               </Card>
             ) : (
-              <div className="space-y-4">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xl font-bold text-purple-900">Your Library ({allSavedPoems.length})</h3>
-                  <button onClick={() => setViewMode(viewMode === 'list' ? 'grid' : 'list')} className="p-2 hover:bg-purple-100 rounded-lg transition-colors">
+              <div className="space-y-6">
+                <div className="flex justify-between items-center mb-6">
+                  <h3 className="text-2xl font-bold text-purple-900">Your Library ({allSavedPoems.length})</h3>
+                  <button onClick={() => setViewMode(viewMode === 'list' ? 'grid' : 'list')} className="p-3 bg-white/50 backdrop-blur-xl hover:bg-white/70 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
                     {viewMode === 'list' ? <Grid3x3 className="w-5 h-5 text-purple-600" /> : <FileText className="w-5 h-5 text-purple-600" />}
                   </button>
                 </div>
-                <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 gap-4' : 'space-y-4'}>
+                <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 gap-5' : 'space-y-5'}>
                   {allSavedPoems.map(p => (
-                    <Card key={p.id} className="bg-white/80 backdrop-blur-xl border-purple-200 border-2 p-4 hover:shadow-lg transition-all group">
-                      <div className="flex justify-between items-start gap-3">
+                    <Card key={p.id} className="bg-white/60 backdrop-blur-2xl border border-white/50 p-6 hover:shadow-2xl transition-all duration-300 group rounded-2xl overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-100/20 to-pink-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                      <div className="relative z-10 flex justify-between items-start gap-4">
                         <div className="flex-1">
-                          <h4 className="font-bold text-purple-900 group-hover:text-purple-600 transition-colors">{p.title}</h4>
-                          <p className="text-purple-500 text-sm">{new Date(p.timestamp).toLocaleDateString()}</p>
-                          <p className="text-purple-700 text-sm line-clamp-2 mt-2">{p.content}</p>
+                          <h4 className="font-bold text-purple-900 group-hover:text-purple-700 transition-colors text-lg mb-2">{p.title}</h4>
+                          <p className="text-purple-500 text-sm mb-3">{new Date(p.timestamp).toLocaleDateString()}</p>
+                          <p className="text-purple-700 text-sm line-clamp-2">{p.content}</p>
                         </div>
-                        <div className="flex gap-1">
-                          <button onClick={() => handleToggleFavorite(p.id)} className="p-2 hover:bg-purple-100 rounded-lg transition-colors">
-                            <Heart className={`w-4 h-4 ${p.isFavorite ? 'fill-red-500 text-red-500' : 'text-purple-400'}`} />
+                        <div className="flex gap-2">
+                          <button onClick={() => handleToggleFavorite(p.id)} className="p-2 bg-white/50 hover:bg-white/80 rounded-lg transition-all duration-300 shadow-md">
+                            <Heart className={`w-5 h-5 ${p.isFavorite ? 'fill-red-500 text-red-500' : 'text-purple-400'}`} />
                           </button>
-                          <button onClick={() => handleCopyPoem(p.content, p.id)} className="p-2 hover:bg-purple-100 rounded-lg transition-colors">
-                            {copiedId === p.id ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4 text-purple-400" />}
+                          <button onClick={() => handleCopyPoem(p.content, p.id)} className="p-2 bg-white/50 hover:bg-white/80 rounded-lg transition-all duration-300 shadow-md">
+                            {copiedId === p.id ? <Check className="w-5 h-5 text-green-500" /> : <Copy className="w-5 h-5 text-purple-400" />}
                           </button>
-                          <button onClick={() => handleDownloadPoem(p.title, p.content)} className="p-2 hover:bg-purple-100 rounded-lg transition-colors">
-                            <Download className="w-4 h-4 text-purple-400" />
+                          <button onClick={() => handleDownloadPoem(p.title, p.content)} className="p-2 bg-white/50 hover:bg-white/80 rounded-lg transition-all duration-300 shadow-md">
+                            <Download className="w-5 h-5 text-purple-400" />
                           </button>
-                          <button onClick={() => handleDeletePoem(p.id)} className="p-2 hover:bg-red-100 rounded-lg transition-colors">
-                            <Trash2 className="w-4 h-4 text-red-400" />
+                          <button onClick={() => handleDeletePoem(p.id)} className="p-2 bg-red-100/50 hover:bg-red-200/70 rounded-lg transition-all duration-300 shadow-md">
+                            <Trash2 className="w-5 h-5 text-red-500" />
                           </button>
                         </div>
                       </div>
@@ -488,41 +499,45 @@ function App() {
           {/* Favorites Tab */}
           <TabsContent value="favorites" className="animate-slideIn">
             {favorites.length === 0 ? (
-              <Card className="bg-white/80 backdrop-blur-xl border-purple-200 shadow-2xl border-2 p-8 md:p-12 text-center">
-                <Heart className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-                <p className="text-purple-700 text-lg font-semibold">No favorites yet</p>
-                <p className="text-purple-500">Heart poems to add them to your favorites collection</p>
+              <Card className="bg-white/60 backdrop-blur-3xl border border-white/50 shadow-3xl p-12 md:p-16 text-center rounded-3xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-100/30 to-pink-100/30 pointer-events-none"></div>
+                <div className="relative z-10">
+                  <Heart className="w-16 h-16 text-purple-400 mx-auto mb-6" />
+                  <p className="text-purple-700 text-lg md:text-xl font-bold mb-2">No favorites yet</p>
+                  <p className="text-purple-500 text-base">Heart poems to add them to your favorites collection</p>
+                </div>
               </Card>
             ) : (
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-purple-900 mb-4">Your Favorites ({favorites.length})</h3>
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-purple-900 mb-6">Your Favorites ({favorites.length})</h3>
                 {favorites.map(p => (
-                  <Card key={p.id} className="bg-white/80 backdrop-blur-xl border-purple-200 border-2 p-6 hover:shadow-lg transition-all">
-                    <div className="flex justify-between items-start gap-4 mb-4">
+                  <Card key={p.id} className="bg-white/60 backdrop-blur-2xl border border-white/50 p-8 hover:shadow-2xl transition-all duration-300 rounded-2xl overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-100/20 to-pink-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    <div className="relative z-10 flex justify-between items-start gap-4 mb-6">
                       <div className="flex-1">
-                        <h4 className="font-bold text-purple-900 text-lg">{p.title}</h4>
+                        <h4 className="font-bold text-purple-900 text-xl mb-2 group-hover:text-purple-700 transition-colors">{p.title}</h4>
                         <p className="text-purple-500 text-sm flex items-center gap-2">
                           <Calendar className="w-4 h-4" />
                           {new Date(p.timestamp).toLocaleDateString()}
                         </p>
                       </div>
-                      <button onClick={() => handleToggleFavorite(p.id)} className="p-2 hover:bg-purple-100 rounded-lg transition-colors">
-                        <Heart className="w-5 h-5 fill-red-500 text-red-500" />
+                      <button onClick={() => handleToggleFavorite(p.id)} className="p-2 bg-white/50 hover:bg-white/80 rounded-lg transition-all duration-300 shadow-md">
+                        <Heart className="w-6 h-6 fill-red-500 text-red-500" />
                       </button>
                     </div>
-                    <div className="bg-gradient-to-br from-purple-50 to-white rounded-lg p-4 border border-purple-100 mb-4">
-                      <p className="text-purple-900 whitespace-pre-wrap font-serif text-sm md:text-base leading-relaxed">{p.content}</p>
+                    <div className="bg-white/50 backdrop-blur-xl rounded-2xl p-6 border border-white/50 mb-6 shadow-lg">
+                      <p className="text-purple-900 whitespace-pre-wrap font-serif text-base md:text-lg leading-relaxed">{p.content}</p>
                     </div>
-                    <div className="flex gap-2">
-                      <Button size="sm" variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-100 flex-1" onClick={() => handleCopyPoem(p.content, p.id)}>
+                    <div className="flex gap-3">
+                      <Button size="sm" variant="outline" className="bg-white/50 backdrop-blur-xl border border-white/50 text-purple-700 hover:bg-white/70 flex-1 rounded-lg shadow-md" onClick={() => handleCopyPoem(p.content, p.id)}>
                         {copiedId === p.id ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
                         {copiedId === p.id ? 'Copied!' : 'Copy'}
                       </Button>
-                      <Button size="sm" variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-100 flex-1" onClick={() => handleDownloadPoem(p.title, p.content)}>
+                      <Button size="sm" variant="outline" className="bg-white/50 backdrop-blur-xl border border-white/50 text-purple-700 hover:bg-white/70 flex-1 rounded-lg shadow-md" onClick={() => handleDownloadPoem(p.title, p.content)}>
                         <Download className="w-4 h-4 mr-2" />
                         Download
                       </Button>
-                      <Button size="sm" variant="outline" className="border-red-300 text-red-600 hover:bg-red-100" onClick={() => handleDeletePoem(p.id)}>
+                      <Button size="sm" variant="outline" className="bg-red-100/50 backdrop-blur-xl border border-red-200/50 text-red-600 hover:bg-red-200/70 rounded-lg shadow-md" onClick={() => handleDeletePoem(p.id)}>
                         <Trash2 className="w-4 h-4" />
                       </Button>
                     </div>
@@ -534,28 +549,31 @@ function App() {
 
           {/* Tips Tab */}
           <TabsContent value="tips" className="animate-slideIn">
-            <Card className="bg-white/80 backdrop-blur-xl border-purple-200 shadow-2xl border-2 p-6 md:p-10">
-              <h3 className="text-2xl font-bold text-purple-900 mb-6">Poetry Writing Tips</h3>
-              <div className="space-y-4">
-                <div className="bg-gradient-to-r from-purple-50 to-white p-4 rounded-lg border-l-4 border-purple-500">
-                  <h4 className="font-bold text-purple-900 mb-2">Use Sensory Details</h4>
-                  <p className="text-purple-700 text-sm">Engage your reader's senses with vivid descriptions of sights, sounds, smells, tastes, and textures.</p>
-                </div>
-                <div className="bg-gradient-to-r from-purple-50 to-white p-4 rounded-lg border-l-4 border-purple-500">
-                  <h4 className="font-bold text-purple-900 mb-2">Play with Rhythm</h4>
-                  <p className="text-purple-700 text-sm">Vary line lengths and sentence structures to create natural cadence and emphasis in your poem.</p>
-                </div>
-                <div className="bg-gradient-to-r from-purple-50 to-white p-4 rounded-lg border-l-4 border-purple-500">
-                  <h4 className="font-bold text-purple-900 mb-2">Show, Don't Tell</h4>
-                  <p className="text-purple-700 text-sm">Instead of stating emotions, use metaphors and imagery to let readers experience them.</p>
-                </div>
-                <div className="bg-gradient-to-r from-purple-50 to-white p-4 rounded-lg border-l-4 border-purple-500">
-                  <h4 className="font-bold text-purple-900 mb-2">Experiment with Tone</h4>
-                  <p className="text-purple-700 text-sm">Different tones create different moods. Try romantic, melancholic, inspirational, or whimsical for variety.</p>
-                </div>
-                <div className="bg-gradient-to-r from-purple-50 to-white p-4 rounded-lg border-l-4 border-purple-500">
-                  <h4 className="font-bold text-purple-900 mb-2">Revise and Refine</h4>
-                  <p className="text-purple-700 text-sm">Don't hesitate to edit your poems. The best poetry comes from multiple revisions and thoughtful refinement.</p>
+            <Card className="bg-white/60 backdrop-blur-3xl border border-white/50 shadow-3xl p-8 md:p-12 rounded-3xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-100/30 to-pink-100/30 pointer-events-none"></div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold text-purple-900 mb-8">Poetry Writing Tips</h3>
+                <div className="space-y-5">
+                  <div className="bg-white/50 backdrop-blur-xl border border-white/50 p-6 rounded-2xl border-l-4 border-purple-500 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <h4 className="font-bold text-purple-900 mb-2 text-lg group-hover:text-purple-700 transition-colors">Use Sensory Details</h4>
+                    <p className="text-purple-700 text-sm md:text-base">Engage your reader's senses with vivid descriptions of sights, sounds, smells, tastes, and textures.</p>
+                  </div>
+                  <div className="bg-white/50 backdrop-blur-xl border border-white/50 p-6 rounded-2xl border-l-4 border-violet-500 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <h4 className="font-bold text-purple-900 mb-2 text-lg group-hover:text-purple-700 transition-colors">Play with Rhythm</h4>
+                    <p className="text-purple-700 text-sm md:text-base">Vary line lengths and sentence structures to create natural cadence and emphasis in your poem.</p>
+                  </div>
+                  <div className="bg-white/50 backdrop-blur-xl border border-white/50 p-6 rounded-2xl border-l-4 border-pink-500 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <h4 className="font-bold text-purple-900 mb-2 text-lg group-hover:text-purple-700 transition-colors">Show, Don't Tell</h4>
+                    <p className="text-purple-700 text-sm md:text-base">Instead of stating emotions, use metaphors and imagery to let readers experience them.</p>
+                  </div>
+                  <div className="bg-white/50 backdrop-blur-xl border border-white/50 p-6 rounded-2xl border-l-4 border-purple-500 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <h4 className="font-bold text-purple-900 mb-2 text-lg group-hover:text-purple-700 transition-colors">Experiment with Tone</h4>
+                    <p className="text-purple-700 text-sm md:text-base">Different tones create different moods. Try romantic, melancholic, inspirational, or whimsical for variety.</p>
+                  </div>
+                  <div className="bg-white/50 backdrop-blur-xl border border-white/50 p-6 rounded-2xl border-l-4 border-indigo-500 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <h4 className="font-bold text-purple-900 mb-2 text-lg group-hover:text-purple-700 transition-colors">Revise and Refine</h4>
+                    <p className="text-purple-700 text-sm md:text-base">Don't hesitate to edit your poems. The best poetry comes from multiple revisions and thoughtful refinement.</p>
+                  </div>
                 </div>
               </div>
             </Card>
