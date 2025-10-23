@@ -165,20 +165,70 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-50 flex flex-col items-center justify-start p-4 md:p-8 relative overflow-hidden">
-      {/* Animated gradient orbs */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-300 to-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-gradient-to-br from-purple-200 to-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-br from-purple-300 to-white rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+      {/* Animated gradient orbs background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {/* Primary purple orb - top right */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-400 via-purple-300 to-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob"></div>
+
+        {/* Secondary indigo orb - bottom left */}
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-indigo-400 via-purple-400 to-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-2000"></div>
+
+        {/* Tertiary pink orb - top left */}
+        <div className="absolute top-20 left-1/4 w-80 h-80 bg-gradient-to-br from-pink-300 via-purple-300 to-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+        {/* Quaternary violet orb - center right */}
+        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-gradient-to-bl from-violet-400 to-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-3000"></div>
+
+        {/* Quinary blue orb - bottom right */}
+        <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-gradient-to-tl from-blue-300 via-purple-300 to-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-5000"></div>
+
+        {/* Extra lavender orb - center */}
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-br from-purple-300 via-violet-200 to-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-6000"></div>
+
+        {/* Small accent orb - top center */}
+        <div className="absolute top-1/4 left-1/2 w-64 h-64 bg-gradient-to-br from-rose-300 to-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-7000"></div>
+
+        {/* Additional bottom center orb */}
+        <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-gradient-to-tr from-purple-400 to-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-1000"></div>
+      </div>
 
       <style>{`
         @keyframes blob {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
+          0%, 100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.25;
+          }
+          33% {
+            transform: translate(40px, -60px) scale(1.15);
+            opacity: 0.3;
+          }
+          50% {
+            transform: translate(-30px, 40px) scale(0.95);
+            opacity: 0.2;
+          }
+          66% {
+            transform: translate(-50px, -30px) scale(1.1);
+            opacity: 0.25;
+          }
+          100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.25;
+          }
         }
-        .animate-blob { animation: blob 7s infinite; }
+
+        .animate-blob {
+          animation: blob 12s ease-in-out infinite;
+          will-change: transform;
+        }
+
+        .animation-delay-1000 { animation-delay: 1s; }
         .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-3000 { animation-delay: 3s; }
         .animation-delay-4000 { animation-delay: 4s; }
+        .animation-delay-5000 { animation-delay: 5s; }
+        .animation-delay-6000 { animation-delay: 6s; }
+        .animation-delay-7000 { animation-delay: 7s; }
+
         @keyframes slideIn {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
